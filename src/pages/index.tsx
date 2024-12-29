@@ -1,111 +1,91 @@
-import Image from "next/image";
-import styles from "@/src/styles/page.module.css";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Link } from "@nextui-org/link";
+import { button as buttonStyles } from "@nextui-org/theme";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { siteConfig } from "@/src/config/site";
+import { GithubIcon } from "@/src/components/icons";
+import DefaultLayout from "@/src/layouts/default";
+import { title } from "@/src/components/primitives";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
+export default function IndexPage() {
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} ${styles.page}`}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/img/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+    <DefaultLayout>
+      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+        <h1 className={title() + " mb-6"}>John Doe</h1>
+        <p className="text-xl text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
+          gravida quis blandit turpis. Augue neque gravida in fermentum et
+          sollicitudin ac orci. Et sollicitudin ac orci phasellus egestas.
+          Elementum tempus egestas sed sed risus pretium quam vulputate.
+          Interdum velit euismod in pellentesque massa placerat duis ultricies.
+          Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui.
+          Praesent semper feugiat nibh sed pulvinar. Ultrices gravida dictum
+          fusce ut placerat orci nulla pellentesque. Malesuada proin libero nunc
+          consequat interdum varius sit amet. Lectus quam id leo in vitae. Sed
+          viverra tellus in hac habitasse platea dictumst. Vivamus at augue eget
+          arcu. Augue mauris augue neque gravida in. Tincidunt vitae semper quis
+          lectus nulla at volutpat diam. Gravida dictum fusce ut placerat. Erat
+          velit scelerisque in dictum non. Tempus quam pellentesque nec nam
+          aliquam sem et tortor consequat. Eu nisl nunc mi ipsum faucibus. Cras
+          fermentum odio eu feugiat pretium nibh. Vel pharetra vel turpis nunc
+          eget lorem dolor sed viverra. Sollicitudin tempor id eu nisl nunc mi
+          ipsum faucibus. Sed id semper risus in hendrerit gravida rutrum. Eget
+          nulla facilisi etiam dignissim. Erat imperdiet sed euismod nisi. Risus
+          in hendrerit gravida rutrum quisque non tellus orci ac. Tempor orci
+          dapibus ultrices in iaculis nunc sed augue lacus. In pellentesque
+          massa placerat duis ultricies. Sit amet massa vitae tortor
+          condimentum. Morbi tincidunt augue interdum velit euismod. Aliquet
+          enim tortor at auctor urna nunc id. A scelerisque purus semper eget.
+          Vitae justo eget magna fermentum iaculis. Arcu non odio euismod
+          lacinia at quis. Et leo duis ut diam quam nulla porttitor massa. Eget
+          nunc scelerisque viverra mauris. Suscipit tellus mauris a diam
+          maecenas sed enim. Cras sed felis eget velit aliquet. Est placerat in
+          egestas erat imperdiet sed euismod nisi porta. In ante metus dictum at
+          tempor commodo. In cursus turpis massa tincidunt dui ut ornare lectus.
+          Tempus iaculis urna id volutpat. Iaculis eu non diam phasellus
+          vestibulum lorem sed risus. Ridiculus mus mauris vitae ultricies leo
+          integer malesuada nunc vel. Imperdiet massa tincidunt nunc pulvinar
+          sapien et ligula ullamcorper malesuada. Faucibus pulvinar elementum
+          integer enim neque volutpat. Gravida arcu ac tortor dignissim
+          convallis aenean. Lectus quam id leo in vitae. Ultricies tristique
+          nulla aliquet enim tortor. Nec tincidunt praesent semper feugiat nibh
+          sed. Imperdiet proin fermentum leo vel orci porta non pulvinar neque.
+          Praesent semper feugiat nibh sed pulvinar proin gravida. Dis
+          parturient montes nascetur ridiculus mus mauris. Rhoncus dolor purus
+          non enim praesent elementum facilisis leo vel. Ut lectus arcu bibendum
+          at. Integer enim neque volutpat ac. Diam sit amet nisl suscipit. Eros
+          donec ac odio tempor orci dapibus ultrices in iaculis. Ullamcorper a
+          lacus vestibulum sed arcu non odio euismod. Quis lectus nulla at
+          volutpat diam ut. Turpis egestas integer eget aliquet. Adipiscing
+          tristique risus nec feugiat in fermentum posuere. Morbi tempus iaculis
+          urna id. Amet commodo nulla facilisi nullam vehicula ipsum a arcu.
+          Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui.
+          Praesent semper feugiat nibh sed pulvinar. Ultrices gravida dictum
+          fusce ut placerat orci nulla pellentesque. Malesuada proin libero nunc
+          consequat interdum varius sit amet. Lectus quam id leo in vitae. Sed
+          viverra tellus in hac habitasse platea dictumst. Vivamus at augue eget
+          arcu. Augue mauris augue neque gravida in. Tincidunt vitae semper quis
+          lectus nulla at volutpat diam. Gravida dictum fusce ut placerat. Erat
+          velit scelerisque in dictum non. Tempus quam pellentesque nec nam
+          aliquam sem et tortor consequat. Eu nisl nunc mi ipsum faucibus. Cras
+          fermentum odio eu feugiat pretium nibh. Vel pharetra vel turpis nunc
+          eget lorem dolor sed viverra. Sollicitudin tempor id eu nisl nunc mi
+          ipsum faucibus. Sed id semper risus in hendrerit gravida rutrum. Eget
+          nulla facilisi etiam dignissim. Erat imperdiet sed euismod nisi. Risus
+          in hendrerit gravida rutrum quisque non tellus orci ac.
+        </p>
 
-        <ol>
-          <li>Get started by editing <code>app/page.tsx</code>.</li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="flex gap-3">
+          <Link
+            isExternal
+            className={buttonStyles({ variant: "bordered", radius: "full" })}
+            href={siteConfig.links.github}
           >
-            <Image
-              className={styles.logo}
-              src="/img/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-
-            Deploy now
-          </a>
-
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            <GithubIcon size={20} />
+            GitHub
+          </Link>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer">
-          <Image
-            aria-hidden
-            src="/img/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-
-          Learn
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/img/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/img/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </DefaultLayout>
   );
 }
