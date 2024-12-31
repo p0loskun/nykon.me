@@ -25,7 +25,7 @@ export const NavButton = ({
     <NavbarItem>
       <a href={href}>
         <Button
-          className="min-w-14"
+          className="min-w-14 transition-all border-1 border-transparent hover:border-neutral-600"
           color="default"
           isIconOnly={iconOnly}
           radius="md"
@@ -43,10 +43,11 @@ export const NavButton = ({
 export const Navbar = ({ iconOnly }:{ iconOnly?: boolean; }) => {
   return (
     <NextUINavbar
+      isBlurred={false}
       className={styles.navbar + " backdrop-blur-none bg-background-none"}
     >
       <NavbarContent className="basis-full" justify="center">
-        <div className="flex gap-1 backdrop-blur-xl backdrop-saturate-150 bg-background/70 border-1 border-neutral-600 rounded-2xl h-10 items-center px-1 py-5">
+        <div className="flex gap-1 backdrop-blur-md bg-transparent border-1 border-neutral-600 rounded-2xl h-10 items-center px-1 py-5">
           {siteConfig.navItems.map((item) => (
             <NavButton
               key={item.href}
@@ -57,7 +58,7 @@ export const Navbar = ({ iconOnly }:{ iconOnly?: boolean; }) => {
             />
           ))}
         </div>
-        <ThemeSwitch className="backdrop-blur-xl backdrop-saturate-150 bg-background/70 border-1 border-neutral-600 rounded-large max-h-10 max-w-10 min-w-10 min-h-10 justify-center" />
+        <ThemeSwitch className="backdrop-blur-md bg-transparent border-1 border-neutral-600 hover:bg-default/40 transition-all rounded-large max-h-10 max-w-10 min-w-10 min-h-10 justify-center" />
       </NavbarContent>
     </NextUINavbar>
   );
