@@ -15,6 +15,7 @@ export const fontMono = FontMono({
 });
 
 export const fontRighteous = FontRighteous({
+  subsets: ["latin"],
   weight: "400",
   variable: "--font-righteous",
 });
