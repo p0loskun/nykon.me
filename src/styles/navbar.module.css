@@ -1,0 +1,10 @@
+.navbar {
+  position: fixed;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: auto;
+    bottom: 0.5rem;
+  }
+}

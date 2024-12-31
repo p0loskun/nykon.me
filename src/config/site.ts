@@ -7,18 +7,22 @@ export const siteConfig = {
     {
       label: "Home",
       href: "/",
+      icon: "home",
     },
     {
       label: "Work",
       href: "/work",
+      icon: "work",
     },
     {
       label: "Blog",
       href: "/blog",
+      icon: "blog",
     },
     {
       label: "Gallery",
       href: "/gallery",
+      icon: "gallery",
     },
   ],
   links: {

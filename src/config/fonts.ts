@@ -1,4 +1,8 @@
-import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
+import {
+  Geist_Mono as FontMono,
+  Inter as FontSans,
+  Righteous as FontRighteous,
+} from "next/font/google";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -8,4 +12,9 @@ export const fontSans = FontSans({
 export const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
+});
+
+export const fontRighteous = FontRighteous({
+  weight: "400",
+  variable: "--font-righteous",
 });

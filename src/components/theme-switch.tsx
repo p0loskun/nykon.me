@@ -4,7 +4,7 @@ import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
 
-import { SunFilledIcon, MoonFilledIcon } from "@/src/components/icons";
+import { SunIcon, MoonIcon } from "@/src/components/icons";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -77,9 +77,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         })}
       >
         {isSelected ? (
-          <MoonFilledIcon size={22} />
+          <MoonIcon size={22} />
         ) : (
-          <SunFilledIcon size={22} />
+          <SunIcon size={22} />
         )}
       </div>
     </Component>
