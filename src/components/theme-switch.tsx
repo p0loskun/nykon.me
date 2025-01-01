@@ -48,7 +48,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
       aria-label={isSelected ? "Switch to dark mode" : "Switch to light mode"}
       {...getBaseProps({
         className: clsx(
-          "px-px transition-opacity cursor-pointer",
+          "px-px cursor-pointer",
           className,
           classNames?.base,
         ),

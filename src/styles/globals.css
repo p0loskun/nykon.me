@@ -18,3 +18,20 @@
   background-clip: content-box;
   background-color: hsl(var(--app-foreground));
 }
+
+/* Animation styles */
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.transition-opacity {
+  animation: fadeInOut 1s ease-in-out forwards;
+}
+
+

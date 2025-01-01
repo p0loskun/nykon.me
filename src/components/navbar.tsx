@@ -9,6 +9,8 @@ import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/theme-switch";
 import { Icon } from "@/src/components/icons";
 import styles from "@/src/styles/navbar.module.css";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export const NavButton = ({
   href,
@@ -21,30 +23,53 @@ export const NavButton = ({
   icon: string;
   iconOnly?: boolean;
 }) => {
+  const [currentPath, setCurrentPath] = useState<string>("");
+  const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentPath(window.location.pathname);
+    }
+  }, [router]);
+
+  const isActive = href === currentPath;
+
+  const handleNavigation = () => {
+    if (href !== currentPath) {
+      router.push(href);
+    }
+  };
+
   return (
     <NavbarItem>
-      <a href={href}>
-        <Button
-          className="min-w-14 transition-all border-1 border-transparent hover:border-neutral-600"
-          color="default"
-          isIconOnly={iconOnly}
-          radius="md"
-          size="sm"
-          startContent={<Icon name={icon} size={16} />}
-          variant="light"
-        >
-          <h2 className="text-sm">{iconOnly ? null : label}</h2>
-        </Button>
-      </a>
+      <Button
+        className={[
+          isActive
+            ? "bg-default/40 border-neutral-600 text-default-900"
+            : "border-transparent text-default-500",
+          styles.navButton,
+          "min-w-14 transition-all border-1 hover:border-neutral-600 focus:border-neutral-600",
+        ].join(" ")}
+        color="default"
+        isIconOnly={iconOnly}
+        radius="md"
+        size="sm"
+        startContent={<Icon name={icon} size={16} />}
+        variant="light"
+        onPress={handleNavigation}
+      >
+        <h2 className="text-sm">{iconOnly ? null : label}</h2>
+      </Button>
     </NavbarItem>
   );
 };
+
 
 export const Navbar = ({ iconOnly }:{ iconOnly?: boolean; }) => {
   return (
     <NextUINavbar
       isBlurred={false}
-      className={styles.navbar + " backdrop-blur-none bg-background-none"}
+      className={`${styles.navbar} backdrop-blur-none bg-background-none`}
     >
       <NavbarContent className="basis-full" justify="center">
         <div className="flex gap-1 backdrop-blur-md bg-transparent border-1 border-neutral-600 rounded-2xl h-10 items-center px-1 py-5">
