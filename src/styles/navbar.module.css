@@ -1,10 +1,21 @@
 .navbar {
   position: fixed;
+  background: linear-gradient(
+      180deg,
+      hsl(var(--app-background)) 15%,
+      transparent 100%
+  );
 }
 
 @media (width < 768px) {
   .navbar {
     top: auto;
-    bottom: 1.5rem;
+    bottom: 0;
+    padding-bottom: 1.5rem;
+    background: linear-gradient(
+        0deg,
+        hsl(var(--app-background)) 15%,
+        transparent 100%
+    );
   }
 }
