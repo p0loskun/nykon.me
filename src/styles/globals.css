@@ -21,7 +21,16 @@
 
 /* Animation styles */
 
-@keyframes fadeInOut {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
   0% {
     opacity: 1;
   }
@@ -30,8 +39,12 @@
   }
 }
 
-.transition-opacity {
-  animation: fadeInOut 1s ease-in-out forwards;
+.transition-opacity-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.transition-opacity-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
 }
 
 

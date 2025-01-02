@@ -247,7 +247,9 @@ export const Icon = ({
 }: IconSvgProps & { name: string }): ReactElement => {
   const IconComponent = iconMap.get(name);
 
-  return IconComponent
-    ? (<IconComponent size={size} width={width} height={height} {...props} />)
-    : (<div />);
+  return IconComponent ? (
+    <IconComponent height={height} size={size} width={width} {...props} />
+  ) : (
+    <div />
+  );
 };

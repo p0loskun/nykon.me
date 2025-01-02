@@ -1,14 +1,16 @@
 import React from "react";
 
-export const TransitionScreen = ({
-  isVisible,
-}: {
-  isVisible: boolean;
-}) => {
+import { useTransition } from "@/src/context/transition-сontext";
+
+export const TransitionScreen = () => {
+  const { isContentVisible } = useTransition();
+
   return (
     <div
-      className={`fixed inset-0 bg-background z-50 transition-opacity duration-500 ${
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      className={`fixed inset-0 bg-background z-50 duration-500 ${
+        isContentVisible
+          ? "opacity-0 pointer-events-none transition-opacity-out"
+          : "opacity-100 transition-opacity-in"
       }`}
     />
   );

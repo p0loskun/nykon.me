@@ -47,11 +47,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     <Component
       aria-label={isSelected ? "Switch to dark mode" : "Switch to light mode"}
       {...getBaseProps({
-        className: clsx(
-          "px-px cursor-pointer",
-          className,
-          classNames?.base,
-        ),
+        className: clsx("px-px cursor-pointer", className, classNames?.base),
       })}
     >
       <VisuallyHidden>
@@ -76,11 +72,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
           ),
         })}
       >
-        {isSelected ? (
-          <MoonIcon size={22} />
-        ) : (
-          <SunIcon size={22} />
-        )}
+        {isSelected ? <MoonIcon size={22} /> : <SunIcon size={22} />}
       </div>
     </Component>
   );

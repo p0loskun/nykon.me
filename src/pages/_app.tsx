@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import { fontSans, fontMono } from "@/src/config/fonts";
 import "@/src/styles/globals.css";
+import { TransitionProvider } from "@/src/context/transition-сontext";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider navigate={router.push}>
       <NextThemesProvider>
-        <Component {...pageProps} />
+        <TransitionProvider>
+          <Component {...pageProps} />
+        </TransitionProvider>
       </NextThemesProvider>
     </NextUIProvider>
   );
