@@ -28,7 +28,7 @@ export default function DefaultLayout({
       <TransitionScreen />
       <Navbar iconOnly={isMobileView} />
       <ScrollShadow className="w-full h-screen" hideScrollBar={true} size={100}>
-        <main className="container mx-auto max-w-7xl px-6 flex-grow md:pt-16">
+        <main className="container mx-auto max-w-7xl px-6 flex-grow md:pt-16 max-md:pb-20">
           {children}
         </main>
       </ScrollShadow>
