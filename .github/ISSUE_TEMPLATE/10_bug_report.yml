@@ -2,6 +2,8 @@ name: "🐞 Bug Report"
 description: "Create a report about something that is not working"
 title: "[Bug]: "
 labels: [ "Bug" ]
+assignees:
+  - p0loskun
 body:
 - type: markdown
   attributes:
@@ -16,6 +18,19 @@ body:
       - Content related
       - Feature not working as intended
       - Other
+  validations:
+    required: true
+
+- type: dropdown
+  attributes:
+    label: What browsers are you seeing the problem on?
+    multiple: true
+    options:
+      - Chrome
+      - Firefox
+      - Microsoft Edge
+      - Safari
+      - Other (Specify in the fields below)
   validations:
     required: true
       
