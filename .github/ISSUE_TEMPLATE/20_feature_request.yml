@@ -2,6 +2,8 @@ name: "💡 Feature request"
 description: "Suggest an idea for my website"
 title: "[Suggestion]: "
 labels: [ "Suggestion" ]
+assignees:
+  - p0loskun
 body:
 - type: markdown
   attributes:
