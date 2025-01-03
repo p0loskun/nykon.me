@@ -1,20 +1,25 @@
 import React, { createContext, useContext, useState } from "react";
 
+/** Context to manage the visibility of the transition screen overlay. */
 const TransitionContext = createContext<{
   isContentVisible: boolean;
   setContentVisible: (visible: boolean) => void;
 } | null>(null);
 
+/**
+ * Provider for the transition screen context that manages the visibility of the
+ * transition screen overlay.
+ *
+ * @param children The children to render within the provider.
+ * @constructor
+ */
 export const TransitionProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [isContentVisible, setIsContentVisible] = useState(true);
-
-  const setContentVisible = (visible: boolean) => {
-    setIsContentVisible(visible);
-  };
+  /* State to track the visibility of the content */
+  const [isContentVisible, setContentVisible] = useState(true);
 
   return (
     <TransitionContext.Provider value={{ isContentVisible, setContentVisible }}>
@@ -23,7 +28,13 @@ export const TransitionProvider = ({
   );
 };
 
-export const useTransition = () => {
+/**
+ * Hook to access the transition screen context.
+ *
+ * @returns The transition screen context.
+ * @throws {Error} If the hook is used outside the provider.
+ */
+export function useTransition() {
   const context = useContext(TransitionContext);
 
   if (!context) {
@@ -31,4 +42,4 @@ export const useTransition = () => {
   }
 
   return context;
-};
+}

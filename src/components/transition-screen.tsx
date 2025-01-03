@@ -2,7 +2,18 @@ import React from "react";
 
 import { useTransition } from "@/src/context/transition-сontext";
 
+/**
+ * A screen that covers the content.
+ * <p>Used to create a transition effect when navigating between pages.</p>
+ *
+ * @constructor
+ * @see setContentVisible
+ */
 export const TransitionScreen = () => {
+  /*
+   * Transition context, used to get the content visibility state.
+   * Use `setContentVisible` to change the visibility state.
+   */
   const { isContentVisible } = useTransition();
 
   return (

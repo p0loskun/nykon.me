@@ -1,8 +1,11 @@
+/* CSS module file for the navbar-related styles */
+
 .navbar {
   position: fixed;
+  /* noinspection CssUnresolvedCustomProperty */
   background: linear-gradient(
       180deg,
-      hsl(var(--app-background)) 15%,
+      hsl(var(--app-background)) 15%, /* Generated color */
       transparent 100%
   );
 }
@@ -12,9 +15,10 @@
     top: auto;
     bottom: 0;
     padding-bottom: 1.5rem;
+    /* noinspection CssUnresolvedCustomProperty */
     background: linear-gradient(
         0deg,
-        hsl(var(--app-background)) 15%,
+        hsl(var(--app-background)) 15%, /* Generated color */
         transparent 100%
     );
   }

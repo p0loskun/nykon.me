@@ -11,18 +11,26 @@ export interface ThemeSwitchProps {
   classNames?: SwitchProps["classNames"];
 }
 
+/**
+ * A switch component to switch between light and dark themes.
+ *
+ * @param className  Switch class name.
+ * @param classNames Switch class names.
+ * @constructor
+ */
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
   classNames,
 }) => {
+  /* State to store the mounted state of the component */
   const [isMounted, setIsMounted] = useState(false);
-
+  /* Theme context */
   const { theme, setTheme } = useTheme();
-
+  /* Switch handler */
   const onChange = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
-
+  /* Switch hook */
   const {
     Component,
     slots,
@@ -64,7 +72,6 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
               "flex items-center justify-center",
               "group-data-[selected=true]:bg-transparent",
               "!text-default-500",
-              "pt-px",
               "px-0",
               "mx-0",
             ],

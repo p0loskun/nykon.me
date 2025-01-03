@@ -5,6 +5,14 @@ import { ThemeSwitch } from "@/src/components/theme-switch";
 import styles from "@/src/styles/navbar.module.css";
 import { NavButton } from "@/src/components/navbutton";
 
+/**
+ * Default navbar component.
+ * <p>It uses the `siteConfig.navItems` to render the navigation items.</p>
+ *
+ * @param iconOnly If true, only the icons will be displayed.
+ *                 Otherwise, the icons and labels will be displayed.
+ * @constructor
+ */
 export const Navbar = ({ iconOnly }: { iconOnly?: boolean }) => {
   return (
     <NextUINavbar
@@ -17,7 +25,7 @@ export const Navbar = ({ iconOnly }: { iconOnly?: boolean }) => {
             <NavButton
               key={item.href}
               href={item.href}
-              icon={item.icon}
+              iconId={item.icon}
               iconOnly={iconOnly}
               label={item.label}
             />

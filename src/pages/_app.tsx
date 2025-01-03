@@ -4,8 +4,8 @@ import { NextUIProvider } from "@nextui-org/system";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { useRouter } from "next/router";
 
-import { fontSans, fontMono } from "@/src/config/fonts";
 import "@/src/styles/globals.css";
+import { fontSans, fontMono } from "@/src/config/fonts";
 import { TransitionProvider } from "@/src/context/transition-сontext";
 
 export default function App({ Component, pageProps }: AppProps) {

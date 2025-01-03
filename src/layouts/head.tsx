@@ -3,6 +3,11 @@ import NextHead from "next/head";
 
 import { siteConfig } from "@/src/config/site";
 
+/**
+ * Default head component that injects elements to `<head>` of the page.
+ *
+ * @constructor
+ */
 export const Head = () => {
   return (
     <NextHead>
