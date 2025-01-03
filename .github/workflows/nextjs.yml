@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   build:
+    if: "!contains(github.event.commits[0].message, '[ci-skip]')"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -56,6 +57,7 @@ jobs:
           path: ./out
 
   deploy:
+    if: "!contains(github.event.commits[0].message, '[ci-skip]')"
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
