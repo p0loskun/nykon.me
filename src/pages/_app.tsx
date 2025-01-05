@@ -7,11 +7,8 @@ import "@/src/styles/globals.css";
 
 import { fontSans, fontMono } from "@/src/config/fonts";
 import { TransitionProvider } from "@/src/context/transition-сontext";
-import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
 
 export default function App({ Component, pageProps }: AppProps) {
-  useScrollAnimation();
-
   return (
     <NextUIProvider navigate={useRouter().push}>
       <NextThemesProvider>

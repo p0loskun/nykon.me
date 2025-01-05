@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 
+import styles from "@/src/styles/scroll-animated.module.css";
+
 export const useScrollAnimation = () => {
   useEffect(() => {
-    const elements = document.querySelectorAll(".scroll-animated");
+    const elements = document.querySelectorAll(`.${styles.scrollAnimated}`);
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
+            entry.target.classList.add(styles.animate);
           }
         });
       },

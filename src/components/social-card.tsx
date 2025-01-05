@@ -3,6 +3,7 @@ import { Card } from "@nextui-org/card";
 import { Image } from "@nextui-org/image";
 import clsx from "clsx";
 
+import styles from "@/src/styles/scroll-animated.module.css";
 import { SocialCardParams } from "@/src/config/social-cards";
 import { Icon } from "@/src/components/icons";
 import { fontMono } from "@/src/config/fonts";
@@ -15,7 +16,7 @@ export const SocialCard = ({ card }: { card: SocialCardParams }) => {
   return (
     <Link
       key={card.link.href}
-      className="w-full"
+      className={`${styles.scrollAnimated} w-full`}
       href={card.link.href}
       target={card.link.target}
     >
