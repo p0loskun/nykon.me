@@ -76,7 +76,7 @@ export const siteConfig: SiteConfig = {
   links: {
     email: "mailto:contact@nykon.me",
     minersstudios: "https://minersstudios.com",
-    whomine: "https://whomine.com",
+    whomine: "https://whomine.net",
     github: "https://git.nykon.me",
     telegram: "https://t.me/nykon_ashotovich",
     youtube: "https://youtube.com/c/Enchig",
