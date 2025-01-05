@@ -1,5 +1,5 @@
 import {
-  Geist_Mono as FontMono,
+  Inconsolata as FontMono,
   Inter as FontSans,
   Righteous as FontRighteous,
 } from "next/font/google";

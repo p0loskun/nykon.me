@@ -1,27 +1,32 @@
-import { GetServerSideProps } from "next";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Error from "next/error";
 
 import { siteConfig } from "@/src/config/site";
+import RedirectLayout from "@/src/layouts/redirect";
 
-const RedirectPage = () => {
-  return null;
-};
+export default function RedirectPage() {
+  const router = useRouter();
+  const { link } = router.query;
+  const [notFound, setNotFound] = useState(false);
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { link } = context.params!;
-  const targetUrl = siteConfig.links[link as keyof typeof siteConfig.links];
+  useEffect(() => {
+    if (!link) {
+      return;
+    }
 
-  if (!targetUrl) {
-    return {
-      notFound: true,
-    };
+    const url = siteConfig.links[link as keyof typeof siteConfig.links];
+
+    if (url) {
+      router.replace(url);
+    } else {
+      setNotFound(true);
+    }
+  }, [link, router]);
+
+  if (notFound) {
+    return <Error statusCode={404} />;
   }
 
-  return {
-    redirect: {
-      destination: targetUrl,
-      permanent: true,
-    },
-  };
-};
-
-export default RedirectPage;
+  return <RedirectLayout />;
+}
