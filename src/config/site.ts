@@ -1,31 +1,75 @@
 // noinspection JSUnusedGlobalSymbols
 
+import { AnchorHTMLAttributes } from "react";
+
+import { IconId } from "@/src/components/icons";
+
+/** Navigation item type. */
+export type NavItemProps = {
+  label: string;
+  link: AnchorHTMLAttributes<HTMLAnchorElement>;
+  icon: IconId;
+};
+
 /** Site configuration type. */
-export type SiteConfig = typeof siteConfig;
+export type SiteConfig = {
+  name: string;
+  description: string;
+  navItems: NavItemProps[];
+  links: {
+    email: string;
+    minersstudios: string;
+    whomine: string;
+    github: string;
+    telegram: string;
+    youtube: string;
+    twitch: string;
+    tiktok: string;
+    x: string;
+    reddit: string;
+    linkedin: string;
+    medium: string;
+    npm: string;
+    spotify: string;
+    wakatime: string;
+    steam: string;
+    patreon: string;
+    streamlabs: string;
+    donatello: string;
+  };
+};
 
 /** Site configuration data. */
-export const siteConfig = {
+export const siteConfig: SiteConfig = {
   name: "Nykon Hrytsyshyn",
   description: "Personal website of Nykon Hrytsyshyn",
   navItems: [
     {
       label: "Home",
-      href: "/",
+      link: {
+        href: "/",
+      },
       icon: "home",
     },
     {
       label: "Work",
-      href: "/work",
+      link: {
+        href: "/work",
+      },
       icon: "work",
     },
     {
       label: "Blog",
-      href: "/blog",
+      link: {
+        href: "/blog",
+      },
       icon: "blog",
     },
     {
       label: "Gallery",
-      href: "/gallery",
+      link: {
+        href: "/gallery",
+      },
       icon: "gallery",
     },
   ],

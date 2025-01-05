@@ -23,8 +23,8 @@ export const Navbar = ({ iconOnly }: { iconOnly?: boolean }) => {
         <div className="flex gap-1 backdrop-blur-md bg-transparent border-1 border-neutral-600 rounded-2xl h-10 items-center px-1 py-5">
           {siteConfig.navItems.map((item) => (
             <NavButton
-              key={item.href}
-              href={item.href}
+              key={item.link.href}
+              href={item.link.href}
               iconId={item.icon}
               iconOnly={iconOnly}
               label={item.label}

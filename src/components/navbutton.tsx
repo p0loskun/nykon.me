@@ -3,7 +3,7 @@ import { NavbarItem } from "@nextui-org/navbar";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import { Icon } from "@/src/components/icons";
+import { Icon, IconId } from "@/src/components/icons";
 import { useTransition } from "@/src/context/transition-сontext";
 
 /**
@@ -33,9 +33,9 @@ export const NavButton = ({
   textClassName,
   ...props
 }: {
-  href: string;
+  href: string | undefined;
   label: string;
-  iconId: string;
+  iconId: IconId;
   iconOnly?: boolean;
   buttonClassName?: string;
   textClassName?: string;
@@ -56,7 +56,7 @@ export const NavButton = ({
 
   /* Handles the navigation to the specified href */
   const handleNavigation = async () => {
-    if (!isActive && !props.disabled) {
+    if (href && !isActive && !props.disabled) {
       setContentVisible(false);
       setTimeout(() => {
         router.push(href).then(() => setContentVisible(true));
