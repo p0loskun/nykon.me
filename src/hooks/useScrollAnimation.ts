@@ -4,7 +4,7 @@ import styles from "@/src/styles/scroll-animated.module.css";
 
 /**
  * Search for elements with the `scrollAnimated` class and animate them when
- * they are in the viewport.
+ * they are in the viewport, and reverse the animation when they leave.
  */
 export const useScrollAnimation = () => {
   useEffect(() => {
@@ -15,6 +15,10 @@ export const useScrollAnimation = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(styles.animate);
+            entry.target.classList.remove(styles.fadeOut);
+          } else {
+            entry.target.classList.remove(styles.animate);
+            entry.target.classList.add(styles.fadeOut);
           }
         });
       },
