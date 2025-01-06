@@ -13,6 +13,7 @@ import {
 } from "@/src/config/social-categories";
 import { SocialCategory } from "@/src/components/social-category";
 import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
+import redirect from "@/src/utils/redirect";
 
 export default function IndexPage() {
   const cardMap = new Map<string, ReactElement[]>();
@@ -47,7 +48,11 @@ export default function IndexPage() {
             className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-300 py-3 leading-5`}
           >
             Working on{" "}
-            <Link className="text-neutral-400" href="/minersstudios">
+            <Link
+              className="text-neutral-400"
+              href={redirect("minersstudios")}
+              target="_blank"
+            >
               @MinersStudios
             </Link>
             <br />

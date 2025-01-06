@@ -1,7 +1,4 @@
-.redirectText {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+/* CSS module file with the animated dots styles */
 
 .dots {
   display: inline-block;

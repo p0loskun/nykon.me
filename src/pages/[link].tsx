@@ -1,48 +1,45 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Error from "next/error";
 
-import { siteConfig } from "@/src/config/site";
 import RedirectLayout from "@/src/layouts/redirect";
+import { redirectMap, Redirect } from "@/src/config/redirects";
+import { RedirectHead } from "@/src/layouts/redirect-head";
 
-export default function RedirectPage({ url }: { url: string | null }) {
+export default function RedirectPage({
+  redirect,
+}: {
+  redirect: Redirect | null;
+}) {
   const router = useRouter();
 
-  if (!url) {
+  useEffect(() => {
+    if (redirect?.href) {
+      router.replace(redirect.href);
+    }
+  }, [router, redirect]);
+
+  if (!redirect) {
     return <Error statusCode={404} />;
   }
 
-  if (typeof window !== "undefined") {
-    router.replace(url);
-  }
-
-  return <RedirectLayout />;
+  return (
+    <>
+      <RedirectHead redirect={redirect} />
+      <RedirectLayout />
+    </>
+  );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { params } = context;
-  const link = params?.link as string | undefined;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const link = params?.link as keyof typeof redirectMap;
+  const redirect = redirectMap[link] || null;
 
-  if (!link || !siteConfig.links[link as keyof typeof siteConfig.links]) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      url: siteConfig.links[link as keyof typeof siteConfig.links],
-    },
-  };
+  return !redirect ? { notFound: true } : { props: { redirect } };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = Object.keys(siteConfig.links).map((link) => ({
-    params: { link },
-  }));
-
-  return {
-    paths,
-    fallback: "blocking",
-  };
-};
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: Object.keys(redirectMap).map((link) => ({ params: { link } })),
+  fallback: false,
+});

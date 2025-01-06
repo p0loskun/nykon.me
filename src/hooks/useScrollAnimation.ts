@@ -2,6 +2,10 @@ import { useEffect } from "react";
 
 import styles from "@/src/styles/scroll-animated.module.css";
 
+/**
+ * Search for elements with the `scrollAnimated` class and animate them when
+ * they are in the viewport.
+ */
 export const useScrollAnimation = () => {
   useEffect(() => {
     const elements = document.querySelectorAll(`.${styles.scrollAnimated}`);

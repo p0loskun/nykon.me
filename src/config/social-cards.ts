@@ -4,6 +4,7 @@ import { AnchorHTMLAttributes, ImgHTMLAttributes } from "react";
 
 import { IconId } from "@/src/components/icons";
 import { SocialCategoryId } from "@/src/config/social-categories";
+import redirect from "@/src/utils/redirect";
 
 /** Social card data type. */
 export type SocialCardParams = {
@@ -23,7 +24,7 @@ export type SocialCards = typeof socialCards;
 export const socialCards: SocialCardParams[] = [
   {
     link: {
-      href: "/whomine",
+      href: redirect("whomine"),
       target: "_blank",
     },
     background: {
@@ -36,7 +37,7 @@ export const socialCards: SocialCardParams[] = [
     icon: "minersstudios",
     iconSize: 78,
     link: {
-      href: "/minersstudios",
+      href: redirect("minersstudios"),
       target: "_blank",
     },
     category: "work",
@@ -45,7 +46,7 @@ export const socialCards: SocialCardParams[] = [
     title: "GitHub",
     icon: "github",
     link: {
-      href: "/github",
+      href: redirect("github"),
       target: "_blank",
     },
   },
@@ -53,7 +54,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Telegram",
     icon: "telegram",
     link: {
-      href: "/telegram",
+      href: redirect("telegram"),
       target: "_blank",
     },
   },
@@ -61,7 +62,7 @@ export const socialCards: SocialCardParams[] = [
     title: "YouTube",
     icon: "youtube",
     link: {
-      href: "/youtube",
+      href: redirect("youtube"),
       target: "_blank",
     },
   },
@@ -69,7 +70,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Twitch",
     icon: "twitch",
     link: {
-      href: "/twitch",
+      href: redirect("twitch"),
       target: "_blank",
     },
   },
@@ -77,7 +78,7 @@ export const socialCards: SocialCardParams[] = [
     title: "TikTok",
     icon: "tiktok",
     link: {
-      href: "/tiktok",
+      href: redirect("tiktok"),
       target: "_blank",
     },
   },
@@ -85,7 +86,7 @@ export const socialCards: SocialCardParams[] = [
     title: "X (Twitter)",
     icon: "x",
     link: {
-      href: "/x",
+      href: redirect("x"),
       target: "_blank",
     },
   },
@@ -93,7 +94,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Reddit",
     icon: "reddit",
     link: {
-      href: "/reddit",
+      href: redirect("reddit"),
       target: "_blank",
     },
   },
@@ -101,7 +102,7 @@ export const socialCards: SocialCardParams[] = [
     title: "LinkedIn",
     icon: "linkedin",
     link: {
-      href: "/linkedin",
+      href: redirect("linkedin"),
       target: "_blank",
     },
   },
@@ -110,7 +111,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Medium",
     icon: "medium",
     link: {
-      href: "/medium",
+      href: redirect("medium"),
       target: "_blank",
     },
   },
@@ -118,7 +119,7 @@ export const socialCards: SocialCardParams[] = [
     title: "NPM",
     icon: "npm",
     link: {
-      href: "/npm",
+      href: redirect("npm"),
       target: "_blank",
     },
   },
@@ -126,7 +127,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Spotify",
     icon: "spotify",
     link: {
-      href: "/spotify",
+      href: redirect("spotify"),
       target: "_blank",
     },
   },
@@ -134,7 +135,7 @@ export const socialCards: SocialCardParams[] = [
     title: "WakaTime",
     icon: "wakatime",
     link: {
-      href: "/wakatime",
+      href: redirect("wakatime"),
       target: "_blank",
     },
   },
@@ -142,7 +143,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Steam",
     icon: "steam",
     link: {
-      href: "/steam",
+      href: redirect("steam"),
       target: "_blank",
     },
   },
@@ -150,7 +151,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Patreon",
     icon: "patreon",
     link: {
-      href: "/patreon",
+      href: redirect("patreon"),
       target: "_blank",
     },
     category: "donate",
@@ -159,7 +160,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Streamlabs",
     icon: "streamlabs",
     link: {
-      href: "/streamlabs",
+      href: redirect("streamlabs"),
       target: "_blank",
     },
     category: "donate",
@@ -168,7 +169,7 @@ export const socialCards: SocialCardParams[] = [
     title: "Donatello",
     icon: "donatello",
     link: {
-      href: "/donatello",
+      href: redirect("donatello"),
       target: "_blank",
     },
     category: "donate",
