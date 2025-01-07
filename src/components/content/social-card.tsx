@@ -4,11 +4,17 @@ import { Image } from "@nextui-org/image";
 import clsx from "clsx";
 
 import styles from "@/src/styles/scroll-animated.module.css";
-import { SocialCardParams } from "@/src/config/social-cards";
+import { SocialCardProps } from "@/src/config/social-cards";
 import { Icon } from "@/src/components/icons";
 import { fontMono } from "@/src/config/fonts";
 
-export const SocialCard = ({ card }: { card: SocialCardParams }) => {
+/**
+ * Social card component.
+ *
+ * @param card Social card parameters.
+ * @constructor
+ */
+export default function SocialCard({ card }: { card: SocialCardProps }) {
   if (card.disabled) {
     return null;
   }
@@ -20,7 +26,15 @@ export const SocialCard = ({ card }: { card: SocialCardParams }) => {
       href={card.link.href}
       target={card.link.target}
     >
-      <Card className="w-full h-full min-h-52 md:min-h-64 flex flex-col justify-center items-center gap-2">
+      <Card
+        className={clsx([
+          "w-full h-full min-h-52 md:min-h-64",
+          "flex flex-col justify-center items-center gap-2",
+          "rounded-[2.5rem] border-1 border-transparent",
+          "hover:border-default hover:scale-[1.025] hover:bg-default-100",
+          "focus:border-default focus:scale-[1.025] focus:bg-default-100",
+        ])}
+      >
         {card.background ? (
           <Image
             removeWrapper
@@ -47,4 +61,4 @@ export const SocialCard = ({ card }: { card: SocialCardParams }) => {
       </Card>
     </Link>
   );
-};
+}

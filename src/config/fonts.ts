@@ -19,3 +19,12 @@ export const fontRighteous = FontRighteous({
   weight: "400",
   variable: "--font-righteous",
 });
+
+/** Fonts */
+export const fonts = {
+  sans: fontSans.style.fontFamily,
+  mono: fontMono.style.fontFamily,
+  righteous: fontRighteous.style.fontFamily,
+};
+
+export default fonts;

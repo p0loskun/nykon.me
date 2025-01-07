@@ -3,7 +3,7 @@
 import React from "react";
 import Head from "next/head";
 
-import { Redirect } from "@/src/config/redirects";
+import { RedirectProps } from "@/src/config/redirects";
 
 /**
  * Default head component for redirect pages that injects elements to `<head>`
@@ -11,7 +11,11 @@ import { Redirect } from "@/src/config/redirects";
  *
  * @constructor
  */
-export const RedirectHead = ({ redirect }: { redirect: Redirect }) => {
+export default function RedirectHead({
+  redirect,
+}: {
+  redirect: RedirectProps;
+}) {
   return (
     <Head>
       <title>{redirect.title}</title>
@@ -22,4 +26,4 @@ export const RedirectHead = ({ redirect }: { redirect: Redirect }) => {
       <link href="/favicon.ico" rel="icon" />
     </Head>
   );
-};
+}

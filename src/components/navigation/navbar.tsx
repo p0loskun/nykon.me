@@ -1,9 +1,9 @@
 import { Navbar as NextUINavbar, NavbarContent } from "@nextui-org/navbar";
 
 import { siteConfig } from "@/src/config/site";
-import { ThemeSwitch } from "@/src/components/theme-switch";
+import ThemeSwitch from "@/src/components/theme-switch";
+import NavButton from "@/src/components/navigation/navbutton";
 import styles from "@/src/styles/navbar.module.css";
-import { NavButton } from "@/src/components/navbutton";
 
 /**
  * Default navbar component.
@@ -13,7 +13,7 @@ import { NavButton } from "@/src/components/navbutton";
  *                 Otherwise, the icons and labels will be displayed.
  * @constructor
  */
-export const Navbar = ({ iconOnly }: { iconOnly?: boolean }) => {
+export default function Navbar({ iconOnly }: { iconOnly?: boolean }) {
   return (
     <NextUINavbar
       className={`${styles.navbar} backdrop-blur-none bg-background-none`}
@@ -35,4 +35,4 @@ export const Navbar = ({ iconOnly }: { iconOnly?: boolean }) => {
       </NavbarContent>
     </NextUINavbar>
   );
-};
+}

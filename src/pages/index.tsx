@@ -1,31 +1,24 @@
-import Image from "next/image";
 import React, { ReactElement } from "react";
 import { Link } from "@nextui-org/link";
+import { Image } from "@nextui-org/image";
 
 import styles from "@/src/styles/scroll-animated.module.css";
-import { siteConfig } from "@/src/config/site";
+import siteConfig from "@/src/config/site";
 import DefaultLayout from "@/src/layouts/default";
-import { socialCards } from "@/src/config/social-cards";
-import { SocialCard } from "@/src/components/social-card";
+import socialCards from "@/src/config/social-cards";
+import SocialCard from "@/src/components/content/social-card";
 import {
   socialCategories,
   SocialCategoryId,
 } from "@/src/config/social-categories";
-import { SocialCategory } from "@/src/components/social-category";
-import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
+import SocialCategory from "@/src/components/content/social-category";
+import useScrollAnimation from "@/src/hooks/useScrollAnimation";
 import redirect from "@/src/utils/redirect";
 
-export default function IndexPage() {
-  const cardMap = new Map<string, ReactElement[]>();
-
-  socialCards.forEach((card) => {
-    const category: SocialCategoryId = card.category || "default";
-    const cards = cardMap.get(category) || [];
-
-    cards.push(<SocialCard key={card.link.href} card={card} />);
-    cardMap.set(category, cards);
-  });
+export default function HomePage() {
   useScrollAnimation();
+
+  const cardMap = initCards();
 
   return (
     <DefaultLayout>
@@ -35,8 +28,9 @@ export default function IndexPage() {
           id="about"
         >
           <Image
+            isBlurred
             alt="Gigacock"
-            className={`${styles.scrollAnimated} rounded-full shadow-lg my-6 border-1 border-solid border-neutral-500`}
+            className={`${styles.scrollAnimated} rounded-full shadow-lg my-6`}
             height={200}
             src="/img/gigacock.jpg"
             width={200}
@@ -63,8 +57,8 @@ export default function IndexPage() {
           {socialCategories.map((category) => (
             <SocialCategory
               key={category.id}
-              category={category.params}
               className="text-center"
+              props={category.props}
             >
               {cardMap.get(category.id)}
             </SocialCategory>
@@ -73,4 +67,18 @@ export default function IndexPage() {
       </section>
     </DefaultLayout>
   );
+}
+
+function initCards() {
+  const cardMap = new Map<string, ReactElement[]>();
+
+  socialCards.forEach((card) => {
+    const category: SocialCategoryId = card.category || "default";
+    const cards = cardMap.get(category) || [];
+
+    cards.push(<SocialCard key={card.link.href} card={card} />);
+    cardMap.set(category, cards);
+  });
+
+  return cardMap;
 }

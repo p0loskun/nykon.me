@@ -8,7 +8,7 @@ import { siteConfig } from "@/src/config/site";
  *
  * @constructor
  */
-export const Head = () => {
+export default function Head() {
   return (
     <NextHead>
       <title>{siteConfig.name}</title>
@@ -23,4 +23,4 @@ export const Head = () => {
       <link href="/favicon.ico" rel="icon" />
     </NextHead>
   );
-};
+}

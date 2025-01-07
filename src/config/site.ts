@@ -4,7 +4,7 @@ import { AnchorHTMLAttributes } from "react";
 
 import { IconId } from "@/src/components/icons";
 
-/** Navigation item type. */
+/** Navigation item properties type. */
 export type NavItemProps = {
   label: string;
   link: AnchorHTMLAttributes<HTMLAnchorElement>;
@@ -53,3 +53,5 @@ export const siteConfig: SiteConfig = {
     },
   ],
 };
+
+export default siteConfig;

@@ -1,14 +1,14 @@
 // noinspection JSUnusedGlobalSymbols
 
-/** Redirect type. */
-export type Redirect = {
+/** Redirect properties type. */
+export type RedirectProps = {
   href: string;
   title: string;
   description: string;
 };
 
-/** Redirect map. */
-export const redirectMap: Record<string, Redirect> = {
+/** Redirect data. */
+export const redirects: Record<string, RedirectProps> = {
   email: {
     href: "mailto:contact@nykon.me",
     title: "Email",
@@ -105,3 +105,5 @@ export const redirectMap: Record<string, Redirect> = {
     description: "Support me on Donatello",
   },
 };
+
+export default redirects;

@@ -1,4 +1,4 @@
-import { redirectMap } from "@/src/config/redirects";
+import { redirects } from "@/src/config/redirects";
 
 /**
  * Returns the final URL for a given key from the redirect map.
@@ -7,8 +7,8 @@ import { redirectMap } from "@/src/config/redirects";
  * @returns The final URL (href) associated with the key.
  * @throws {Error} If the key does not exist in the map.
  */
-export default function redirect(key: keyof typeof redirectMap): string {
-  const redirect = redirectMap[key];
+export default function redirect(key: keyof typeof redirects): string {
+  const redirect = redirects[key];
 
   if (!redirect) {
     throw new Error(

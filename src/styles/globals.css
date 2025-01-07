@@ -10,14 +10,14 @@
 
 ::-webkit-scrollbar-track {
   /* noinspection CssUnresolvedCustomProperty */
-  background-color: hsl(var(--app-background)); /* Generated color */
+  background-color: transparent; /* Generated color */
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
   background-clip: content-box;
   /* noinspection CssUnresolvedCustomProperty */
-  background-color: hsl(var(--app-foreground)); /* Generated color */
+  background-color: hsl(var(--app-content1) / var(--app-content1-opacity, var(--tw-bg-opacity))); /* Generated color */
 }
 
 /* Animation styles */

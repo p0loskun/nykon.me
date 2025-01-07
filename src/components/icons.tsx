@@ -444,13 +444,13 @@ export function BaseIcon({
  * @param props  Additional props
  * @constructor ReactElement
  */
-export const Icon = ({
+export function Icon({
   id,
   size = 24,
   width,
   height,
   ...props
-}: IconProps & { id: IconId }): ReactElement => {
+}: IconProps & { id: IconId }): ReactElement {
   const IconComponent = iconMap.get(id);
 
   return IconComponent ? (
@@ -458,4 +458,4 @@ export const Icon = ({
   ) : (
     <div />
   );
-};
+}

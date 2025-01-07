@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { Icon, IconId } from "@/src/components/icons";
-import { useTransition } from "@/src/context/transition-сontext";
+import useTransitionScreen from "@/src/hooks/useTransitionScreen";
 
 /**
  * A navigation button that navigates to the specified href.
@@ -24,7 +24,7 @@ import { useTransition } from "@/src/context/transition-сontext";
  * @param props           Additional button props.
  * @constructor
  */
-export const NavButton = ({
+export default function NavButton({
   href,
   label,
   iconId,
@@ -39,13 +39,13 @@ export const NavButton = ({
   iconOnly?: boolean;
   buttonClassName?: string;
   textClassName?: string;
-} & ButtonProps) => {
+} & ButtonProps) {
   /* State to store the active state of the button */
   const [isActive, setActive] = useState(false);
   /* Router instance */
   const router = useRouter();
   /* Transition context, used to set the content visibility */
-  const { setContentVisible } = useTransition();
+  const { setContentVisible } = useTransitionScreen();
 
   /* Sets the active state of the button based on the current path */
   useEffect(() => {
@@ -89,4 +89,4 @@ export const NavButton = ({
       </Button>
     </NavbarItem>
   );
-};
+}

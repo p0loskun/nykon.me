@@ -2,18 +2,15 @@
 
 import { ImageProps } from "next/image";
 
-/** Gallery card type. */
-export type GalleryCard = {
+/** Gallery card properties type. */
+export type GalleryCardProps = {
   image: ImageProps;
   title?: string;
   subtitle?: string;
 };
 
-/** Gallery cards data type. */
-export type GalleryCards = typeof galleryCards;
-
 /** Gallery cards data. */
-export const galleryCards: GalleryCard[] = [
+export const galleryCards: GalleryCardProps[] = [
   {
     image: {
       src: "/img/gallery/001.jpg",
@@ -87,3 +84,5 @@ export const galleryCards: GalleryCard[] = [
     subtitle: "",
   },
 ];
+
+export default galleryCards;

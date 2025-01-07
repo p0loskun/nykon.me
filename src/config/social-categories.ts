@@ -3,8 +3,8 @@
 /** Social card category type. */
 export type SocialCategoryId = "default" | "work" | "donate";
 
-/** Social category data type. */
-export type SocialCategoryParams = {
+/** Social category properties type. */
+export type SocialCategoryProps = {
   title?: string;
   subtitle?: string;
 };
@@ -15,24 +15,26 @@ export type SocialCategories = typeof socialCategories;
 /** Social categories data. */
 export const socialCategories: {
   id: SocialCategoryId;
-  params: SocialCategoryParams;
+  props: SocialCategoryProps;
 }[] = [
   {
     id: "work",
-    params: {},
+    props: {},
   },
   {
     id: "default",
-    params: {
+    props: {
       title: "Socials",
       subtitle: "Follow me on social media",
     },
   },
   {
     id: "donate",
-    params: {
+    props: {
       title: "Donate",
       subtitle: "Support me by donating",
     },
   },
 ];
+
+export default socialCategories;

@@ -1,6 +1,6 @@
 import { title } from "@/src/components/primitives";
 import DefaultLayout from "@/src/layouts/default";
-import { useScrollAnimation } from "@/src/hooks/useScrollAnimation";
+import useScrollAnimation from "@/src/hooks/useScrollAnimation";
 
 export default function BlogPage() {
   useScrollAnimation();

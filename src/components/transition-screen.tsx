@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTransition } from "@/src/context/transition-сontext";
+import useTransitionScreen from "@/src/hooks/useTransitionScreen";
 
 /**
  * A screen that covers the content.
@@ -9,12 +9,12 @@ import { useTransition } from "@/src/context/transition-сontext";
  * @constructor
  * @see setContentVisible
  */
-export const TransitionScreen = () => {
+export default function TransitionScreen() {
   /*
    * Transition context, used to get the content visibility state.
    * Use `setContentVisible` to change the visibility state.
    */
-  const { isContentVisible } = useTransition();
+  const { isContentVisible } = useTransitionScreen();
 
   return (
     <div
@@ -25,4 +25,4 @@ export const TransitionScreen = () => {
       }`}
     />
   );
-};
+}

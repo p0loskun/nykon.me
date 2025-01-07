@@ -1,15 +1,10 @@
-import { FC, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
 
 import { SunIcon, MoonIcon } from "@/src/components/icons";
-
-export interface ThemeSwitchProps {
-  className?: string;
-  classNames?: SwitchProps["classNames"];
-}
 
 /**
  * A switch component to switch between light and dark themes.
@@ -18,10 +13,13 @@ export interface ThemeSwitchProps {
  * @param classNames Switch class names.
  * @constructor
  */
-export const ThemeSwitch: FC<ThemeSwitchProps> = ({
+export default function ThemeSwitch({
   className,
   classNames,
-}) => {
+}: {
+  className?: string;
+  classNames?: SwitchProps["classNames"];
+}) {
   /* State to store the mounted state of the component */
   const [isMounted, setIsMounted] = useState(false);
   /* Theme context */
@@ -83,4 +81,4 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
       </div>
     </Component>
   );
-};
+}

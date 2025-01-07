@@ -4,20 +4,25 @@ import { useEffect } from "react";
 import Error from "next/error";
 
 import RedirectLayout from "@/src/layouts/redirect";
-import { redirectMap, Redirect } from "@/src/config/redirects";
-import { RedirectHead } from "@/src/layouts/redirect-head";
+import RedirectHead from "@/src/layouts/redirect-head";
+import { redirects, RedirectProps } from "@/src/config/redirects";
 
 export default function RedirectPage({
   redirect,
 }: {
-  redirect: Redirect | null;
+  redirect: RedirectProps | null;
 }) {
   const router = useRouter();
 
   useEffect(() => {
-    if (redirect?.href) {
-      router.replace(redirect.href);
-    }
+    const handleRedirect = async () => {
+      if (redirect?.href) {
+        await router.replace(redirect.href);
+      }
+    };
+
+    // noinspection JSIgnoredPromiseFromCall
+    handleRedirect();
   }, [router, redirect]);
 
   if (!redirect) {
@@ -33,13 +38,13 @@ export default function RedirectPage({
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const link = params?.link as keyof typeof redirectMap;
-  const redirect = redirectMap[link] || null;
+  const link = params?.link as keyof typeof redirects;
+  const redirect = redirects[link] || null;
 
-  return !redirect ? { notFound: true } : { props: { redirect } };
+  return redirect ? { props: { redirect } } : { notFound: true };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: Object.keys(redirectMap).map((link) => ({ params: { link } })),
+  paths: Object.keys(redirects).map((link) => ({ params: { link } })),
   fallback: false,
 });

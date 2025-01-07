@@ -6,8 +6,8 @@ import { IconId } from "@/src/components/icons";
 import { SocialCategoryId } from "@/src/config/social-categories";
 import redirect from "@/src/utils/redirect";
 
-/** Social card data type. */
-export type SocialCardParams = {
+/** Social card properties type. */
+export type SocialCardProps = {
   title?: string;
   icon?: IconId;
   iconSize?: number;
@@ -17,11 +17,8 @@ export type SocialCardParams = {
   disabled?: boolean;
 };
 
-/** Social cards data type. */
-export type SocialCards = typeof socialCards;
-
 /** Social cards data. */
-export const socialCards: SocialCardParams[] = [
+export const socialCards: SocialCardProps[] = [
   {
     link: {
       href: redirect("whomine"),
@@ -175,3 +172,5 @@ export const socialCards: SocialCardParams[] = [
     category: "donate",
   },
 ];
+
+export default socialCards;
