@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import "@/src/styles/globals.css";
 
 import TransitionProvider from "@/src/context/transition-screen-context";
+import "@/src/config/fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
