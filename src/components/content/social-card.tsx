@@ -4,7 +4,7 @@ import { Image } from "@nextui-org/image";
 import clsx from "clsx";
 
 import styles from "@/src/styles/scroll-animated.module.css";
-import { SocialCardProps } from "@/src/config/social-cards";
+import { SocialCardProps } from "@/src/config/content/social-cards";
 import { Icon } from "@/src/components/icons";
 import { fontMono } from "@/src/config/fonts";
 

@@ -5,12 +5,12 @@ import { Image } from "@nextui-org/image";
 import styles from "@/src/styles/scroll-animated.module.css";
 import siteConfig from "@/src/config/site";
 import DefaultLayout from "@/src/layouts/default";
-import socialCards from "@/src/config/social-cards";
+import socialCards from "@/src/config/content/social-cards";
 import SocialCard from "@/src/components/content/social-card";
 import {
   socialCategories,
   SocialCategoryId,
-} from "@/src/config/social-categories";
+} from "@/src/config/content/social-categories";
 import SocialCategory from "@/src/components/content/social-category";
 import useScrollAnimation from "@/src/hooks/useScrollAnimation";
 import redirect from "@/src/utils/redirect";
@@ -32,7 +32,7 @@ export default function HomePage() {
             alt="Gigacock"
             className={`${styles.scrollAnimated} rounded-full shadow-lg my-6`}
             height={200}
-            src="/img/gigacock.jpg"
+            src="/img/gigacock.webp"
             width={200}
           />
           <h1 className={`${styles.scrollAnimated} text-4xl font-bold`}>

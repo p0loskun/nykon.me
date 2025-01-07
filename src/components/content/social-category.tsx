@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SocialCategoryProps } from "@/src/config/social-categories";
+import { SocialCategoryProps } from "@/src/config/content/social-categories";
 
 /**
  * Social category component
