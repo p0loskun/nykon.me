@@ -18,10 +18,6 @@ export const socialCategories: {
   props: SocialCategoryProps;
 }[] = [
   {
-    id: "work",
-    props: {},
-  },
-  {
     id: "default",
     props: {
       title: "Socials",

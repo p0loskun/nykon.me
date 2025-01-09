@@ -38,13 +38,6 @@ export const siteConfig: SiteConfig = {
       icon: "work",
     },
     {
-      label: "Blog",
-      link: {
-        href: "/blog",
-      },
-      icon: "blog",
-    },
-    {
       label: "Gallery",
       link: {
         href: "/gallery",

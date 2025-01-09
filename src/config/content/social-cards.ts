@@ -20,26 +20,6 @@ export type SocialCardProps = {
 /** Social cards data. */
 export const socialCards: SocialCardProps[] = [
   {
-    link: {
-      href: redirect("whomine"),
-      target: "_blank",
-    },
-    background: {
-      src: "/img/social_cards/whomine.webp",
-      alt: "WhoMine card background",
-    },
-    category: "work",
-  },
-  {
-    icon: "minersstudios",
-    iconSize: 78,
-    link: {
-      href: redirect("minersstudios"),
-      target: "_blank",
-    },
-    category: "work",
-  },
-  {
     title: "Mail",
     icon: "mail",
     link: {
