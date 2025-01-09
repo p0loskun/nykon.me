@@ -1,6 +1,7 @@
 import React from "react";
 
 import { SocialCategoryProps } from "@/src/config/content/social-categories";
+import styles from "@/src/styles/scroll-animated.module.css";
 
 /**
  * Social category component
@@ -22,9 +23,13 @@ export default function SocialCategory({
   return (
     <div className={className}>
       {props.title ? (
-        <h1 className="text-2xl font-bold">{props.title}</h1>
+        <h1 className={`${styles.scrollAnimated} text-2xl font-bold`}>
+          {props.title}
+        </h1>
       ) : null}
-      <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
+      <p
+        className={`${styles.scrollAnimated} text-lg text-neutral-600 dark:text-neutral-300 mb-8`}
+      >
         {props.subtitle}
       </p>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-4">
