@@ -29,7 +29,7 @@ export default function SocialCard({ card }: { card: SocialCardProps }) {
       <Card
         className={clsx([
           "w-full h-full min-h-52 md:min-h-64",
-          "flex flex-col justify-center items-center gap-2",
+          "flex flex-col justify-center items-center",
           "rounded-[2.5rem] border-1 border-transparent",
           "hover:border-default hover:scale-[1.025] hover:bg-default-100",
           "focus:border-default focus:scale-[1.025] focus:bg-default-100",

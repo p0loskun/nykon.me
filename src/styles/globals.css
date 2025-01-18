@@ -54,8 +54,21 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.15s;
+  cursor: none !important;
 }
 
-html {
-  scroll-behavior: smooth;
+#cursor {
+  transition: none !important;
+}
+
+/* noinspection CssUnresolvedCustomProperty */
+::selection {
+  background-color: hsl(var(--app-foreground));
+  color: hsl(var(--app-background));
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
