@@ -53,7 +53,11 @@ export default function ThemeSwitch({
     <Component
       aria-label={isSelected ? "Switch to dark mode" : "Switch to light mode"}
       {...getBaseProps({
-        className: clsx("px-px cursor-pointer", className, classNames?.base),
+        className: clsx(
+          "px-px cursor-pointer hover-target",
+          className,
+          classNames?.base,
+        ),
       })}
     >
       <VisuallyHidden>
