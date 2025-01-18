@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import gsap from "gsap";
 import clsx from "clsx";
 
+import isMobile from "@/src/utils/isMobile";
+
 export default function CustomCursor() {
   /* State to store cursor visibility */
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +13,10 @@ export default function CustomCursor() {
 
   /* Handles the cursor movement */
   useEffect(() => {
+    if (isMobile(navigator.userAgent)) {
+      return;
+    }
+
     /* Cursor element */
     const cursor = document.getElementById("cursor");
     /* Animates the cursor to the specified x position. */
