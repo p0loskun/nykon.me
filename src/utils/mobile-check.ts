@@ -3,6 +3,6 @@
  *
  * @param userAgent
  */
-export default function isMobile(userAgent: string): boolean {
+export default function mobileCheck(userAgent: string): boolean {
   return /android.+mobile|ip(hone|[oa]d)/i.test(userAgent);
 }

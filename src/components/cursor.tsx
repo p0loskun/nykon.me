@@ -2,7 +2,7 @@ import { Component } from "react";
 import { withRouter, NextRouter } from "next/router";
 import gsap from "gsap";
 import clsx from "clsx";
-import isMobile from "@utils/isMobile";
+import mobileCheck from "@utils/mobile-check";
 
 /**
  * Cursor properties.
@@ -52,7 +52,7 @@ class Cursor extends Component<CursorProps, CursorState> {
    * @see attachHoverListeners
    */
   componentDidMount() {
-    if (isMobile(navigator.userAgent)) {
+    if (mobileCheck(navigator.userAgent)) {
       return;
     }
 
