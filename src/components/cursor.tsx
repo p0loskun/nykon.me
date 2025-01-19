@@ -8,7 +8,7 @@ import isMobile from "@utils/isMobile";
  * Cursor properties.
  * <p>It contains the router object to listen to route changes.</p>
  */
-declare interface CursorProps {
+interface CursorProps {
   /** Router object. */
   router: NextRouter;
 }
@@ -17,7 +17,7 @@ declare interface CursorProps {
  * Cursor state.
  * <p>It contains the {@link isVisible visibility state} of the cursor.</p>
  */
-declare interface CursorState {
+interface CursorState {
   /** Visibility state of the cursor. */
   isVisible: boolean;
 }
