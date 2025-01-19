@@ -1,23 +1,22 @@
 import type { AppProps } from "next/app";
 
-import { NextUIProvider } from "@nextui-org/system";
+import { HeroUIProvider } from "@heroui/system";
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/router";
-
-import TransitionProvider from "@/src/context/transition-screen-context";
-import CustomCursor from "@/src/components/cursor";
-import "@/src/styles/globals.css";
-import "@/src/config/fonts";
+import { TransitionProvider } from "@contexts/transition-screen";
+import Cursor from "@components/cursor";
+import "@styles/globals.css";
+import "@configs/fonts";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextUIProvider navigate={useRouter().push}>
+    <HeroUIProvider navigate={useRouter().push}>
       <ThemeProvider defaultTheme="dark">
         <TransitionProvider>
-          <CustomCursor />
+          <Cursor />
           <Component {...pageProps} />
         </TransitionProvider>
       </ThemeProvider>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 }

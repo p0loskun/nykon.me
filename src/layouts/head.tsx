@@ -1,7 +1,6 @@
 import React from "react";
 import NextHead from "next/head";
-
-import { siteConfig } from "@/src/config/site";
+import { siteConfig } from "@configs/site";
 
 /**
  * Default head component that injects elements to `<head>` of the page.

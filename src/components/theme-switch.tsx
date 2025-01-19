@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
-import { SwitchProps, useSwitch } from "@nextui-org/switch";
+import { SwitchProps, useSwitch } from "@heroui/switch";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
-
-import { SunIcon, MoonIcon } from "@/src/components/icons";
+import { SunIcon, MoonIcon } from "@components/icon";
 
 /**
  * A switch component to switch between light and dark themes.

@@ -1,6 +1,5 @@
 import { useContext } from "react";
-
-import { TransitionContext } from "@/src/context/transition-screen-context";
+import { TransitionContext } from "@contexts/transition-screen";
 
 /**
  * Hook to access the transition screen context.

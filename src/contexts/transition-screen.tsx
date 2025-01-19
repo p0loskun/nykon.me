@@ -13,7 +13,7 @@ export const TransitionContext = createContext<{
  * @param children The children to render within the provider.
  * @constructor
  */
-export default function TransitionProvider({
+export function TransitionProvider({
   children,
 }: {
   children: React.ReactNode;

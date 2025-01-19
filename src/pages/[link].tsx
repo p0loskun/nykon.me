@@ -2,10 +2,9 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Error from "next/error";
-
-import RedirectLayout from "@/src/layouts/redirect";
-import RedirectHead from "@/src/layouts/redirect-head";
-import { redirects, RedirectProps } from "@/src/config/redirects";
+import RedirectLayout from "@layouts/redirect";
+import RedirectHead from "@layouts/redirect-head";
+import { redirects, RedirectProps } from "@configs/redirects";
 
 export default function RedirectPage({
   redirect,

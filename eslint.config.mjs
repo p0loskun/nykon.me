@@ -33,7 +33,6 @@ export default [
       "public/*",
       "tests/*",
       "scripts/*",
-      "**/*.config.js",
       "**/.DS_Store",
       "**/node_modules",
       "**/coverage",

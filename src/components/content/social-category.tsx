@@ -1,7 +1,6 @@
 import React from "react";
-
-import { SocialCategoryProps } from "@/src/config/content/social-categories";
-import styles from "@/src/styles/scroll-animated.module.css";
+import { SocialCategoryProps } from "@configs/content/social-categories";
+import styles from "@styles/scroll-animated.module.css";
 
 /**
  * Social category component

@@ -1,6 +1,6 @@
-import { title } from "@/src/components/primitives";
-import DefaultLayout from "@/src/layouts/default";
-import useScrollAnimation from "@/src/hooks/useScrollAnimation";
+import { title } from "@components/primitives";
+import DefaultLayout from "@layouts/default";
+import useScrollAnimation from "@hooks/use-scroll-animation";
 
 export default function GalleryPage() {
   useScrollAnimation();

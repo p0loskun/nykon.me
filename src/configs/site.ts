@@ -1,8 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { AnchorHTMLAttributes } from "react";
-
-import { IconId } from "@/src/components/icons";
+import { IconId } from "@components/icon";
 
 /** Navigation item properties type. */
 export type NavItemProps = {

@@ -1,6 +1,5 @@
 import React from "react";
-
-import useTransitionScreen from "@/src/hooks/useTransitionScreen";
+import useTransitionScreen from "@hooks/use-transition-screen";
 
 /**
  * A screen that covers the content.

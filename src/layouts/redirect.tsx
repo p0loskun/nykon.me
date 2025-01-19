@@ -1,7 +1,6 @@
 import React from "react";
-
-import styles from "@/src/styles/animated-dots.module.css";
-import { fontMono } from "@/src/config/fonts";
+import styles from "@styles/animated-dots.module.css";
+import { fontMono } from "@configs/fonts";
 
 /**
  * Default layout for redirecting pages, it shows a message with animated dots.

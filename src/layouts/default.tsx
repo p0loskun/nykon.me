@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-
-import Head from "@/src/layouts/head";
-import Navbar from "@/src/components/navigation/navbar";
-import TransitionScreen from "@/src/components/transition-screen";
-import TransitionProvider from "@/src/context/transition-screen-context";
+import { Navbar } from "@components/navigation";
+import Head from "@layouts/head";
+import TransitionScreen from "@components/transition-screen";
+import { TransitionProvider } from "@contexts/transition-screen";
 
 /**
  * Default layout of the application that wraps the content with the navbar and

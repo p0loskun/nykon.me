@@ -1,19 +1,18 @@
 import React, { ReactElement } from "react";
-import { Link } from "@nextui-org/link";
-import { Image } from "@nextui-org/image";
-
-import styles from "@/src/styles/scroll-animated.module.css";
-import siteConfig from "@/src/config/site";
-import DefaultLayout from "@/src/layouts/default";
-import socialCards from "@/src/config/content/social-cards";
-import SocialCard from "@/src/components/content/social-card";
+import { Link } from "@heroui/link";
+import { Image } from "@heroui/image";
+import styles from "@styles/scroll-animated.module.css";
+import siteConfig from "@configs/site";
+import DefaultLayout from "@layouts/default";
+import socialCards from "@configs/content/social-cards";
+import SocialCard from "@components/content/social-card";
 import {
   socialCategories,
   SocialCategoryId,
-} from "@/src/config/content/social-categories";
-import SocialCategory from "@/src/components/content/social-category";
-import useScrollAnimation from "@/src/hooks/useScrollAnimation";
-import redirect from "@/src/utils/redirect";
+} from "@configs/content/social-categories";
+import SocialCategory from "@components/content/social-category";
+import useScrollAnimation from "@hooks/use-scroll-animation";
+import redirect from "@utils/redirect";
 
 export default function HomePage() {
   useScrollAnimation();
@@ -69,8 +68,14 @@ export default function HomePage() {
   );
 }
 
+/**
+ * Initialize the social cards.
+ */
 function initCards() {
-  const cardMap = new Map<string, ReactElement[]>();
+  const cardMap = new Map<
+    string,
+    ReactElement<React.JSXElementConstructor<any>>[]
+  >();
 
   socialCards.forEach((card) => {
     const category: SocialCategoryId = card.category || "default";

@@ -1,12 +1,11 @@
-import { Link } from "@nextui-org/link";
-import { Card } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
+import { Link } from "@heroui/link";
+import { Card } from "@heroui/card";
+import { Image } from "@heroui/image";
 import clsx from "clsx";
-
-import styles from "@/src/styles/scroll-animated.module.css";
-import { SocialCardProps } from "@/src/config/content/social-cards";
-import { Icon } from "@/src/components/icons";
-import { fontMono } from "@/src/config/fonts";
+import styles from "@styles/scroll-animated.module.css";
+import { SocialCardProps } from "@configs/content/social-cards";
+import { Icon } from "@components/icon";
+import { fontMono } from "@configs/fonts";
 
 /**
  * Social card component.

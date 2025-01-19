@@ -1,10 +1,48 @@
-import { Button, ButtonProps } from "@nextui-org/button";
-import { NavbarItem } from "@nextui-org/navbar";
-import { useRouter } from "next/router";
+import {
+  Navbar as HeroUINavbar,
+  NavbarContent,
+  NavbarItem,
+} from "@heroui/navbar";
+import { siteConfig } from "@configs/site";
+import ThemeSwitch from "@components/theme-switch";
+import styles from "@styles/navbar.module.css";
+import { Button, ButtonProps } from "@heroui/button";
+import { Icon, IconId } from "@components/icon";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import useTransitionScreen from "@hooks/use-transition-screen";
 
-import { Icon, IconId } from "@/src/components/icons";
-import useTransitionScreen from "@/src/hooks/useTransitionScreen";
+/**
+ * Default navbar component.
+ * <p>It uses the `siteConfig.navItems` to render the navigation items.</p>
+ *
+ * @param iconOnly If true, only the icons will be displayed.
+ *                 Otherwise, the icons and labels will be displayed.
+ * @constructor
+ */
+export function Navbar({ iconOnly }: { iconOnly?: boolean }) {
+  return (
+    <HeroUINavbar
+      className={`${styles.navbar} backdrop-blur-none bg-background-none`}
+      isBlurred={false}
+    >
+      <NavbarContent className="basis-full" justify="center">
+        <div className="flex gap-1 backdrop-blur-md bg-transparent border-1 border-neutral-600 rounded-2xl h-10 items-center px-1 py-5">
+          {siteConfig.navItems.map((item) => (
+            <NavButton
+              key={item.link.href}
+              href={item.link.href}
+              iconId={item.icon}
+              iconOnly={iconOnly}
+              label={item.label}
+            />
+          ))}
+        </div>
+        <ThemeSwitch className="backdrop-blur-md bg-transparent border-1 border-neutral-600 hover:bg-default/40 transition-all rounded-large max-h-10 max-w-10 min-w-10 min-h-10 justify-center" />
+      </NavbarContent>
+    </HeroUINavbar>
+  );
+}
 
 /**
  * A navigation button that navigates to the specified href.
@@ -24,7 +62,7 @@ import useTransitionScreen from "@/src/hooks/useTransitionScreen";
  * @param props           Additional button props.
  * @constructor
  */
-export default function NavButton({
+export function NavButton({
   href,
   label,
   iconId,

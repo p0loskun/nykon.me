@@ -2,8 +2,7 @@
 
 import React from "react";
 import Head from "next/head";
-
-import { RedirectProps } from "@/src/config/redirects";
+import { RedirectProps } from "@configs/redirects";
 
 /**
  * Default head component for redirect pages that injects elements to `<head>`

@@ -1,10 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 
 import { AnchorHTMLAttributes, ImgHTMLAttributes } from "react";
-
-import { IconId } from "@/src/components/icons";
-import { SocialCategoryId } from "@/src/config/content/social-categories";
-import redirect from "@/src/utils/redirect";
+import { IconId } from "@components/icon";
+import { SocialCategoryId } from "@configs/content/social-categories";
+import redirect from "@utils/redirect";
 
 /** Social card properties type. */
 export type SocialCardProps = {

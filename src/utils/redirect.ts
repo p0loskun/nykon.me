@@ -1,4 +1,4 @@
-import { redirects } from "@/src/config/redirects";
+import { redirects } from "@configs/redirects";
 
 /**
  * Returns the final URL for a given key from the redirect map.
@@ -12,7 +12,7 @@ export default function redirect(key: keyof typeof redirects): string {
 
   if (!redirect) {
     throw new Error(
-      `[redirect] Missing redirect for key "${key}" in "@/src/config/redirects".`,
+      `[redirect] Missing redirect for key "${key}" in "@/config/redirects".`,
     );
   }
 
