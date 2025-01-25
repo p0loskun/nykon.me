@@ -28,12 +28,13 @@ export function GalleryCard({
         "w-full h-full min-h-52 md:min-h-64",
         "flex flex-col justify-center items-center",
         "rounded-[2.5rem]",
+        "hover-target",
       ])}
     >
       <Image
         removeWrapper
         alt={properties.image.alt as string}
-        className="z-0 w-full h-full object-cover hover:scale-[1.025]"
+        className="z-0 w-full h-full object-cover"
         loading="lazy"
         src={properties.image.src as string}
       />
@@ -67,7 +68,7 @@ export function Gallery({
   children: React.ReactNode;
 }): ReactElement {
   return (
-    <section className="grid grid-cols-[repeat(auto-fit,minmax(20rem,2fr))] gap-4">
+    <section className="grid grid-cols-[repeat(auto-fit,minmax(26rem,1fr))] gap-4">
       {children}
     </section>
   );
