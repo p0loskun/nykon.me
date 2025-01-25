@@ -1,5 +1,7 @@
+import type { IconId, IconProps } from "@type/icon";
+
 import * as React from "react";
-import { ReactElement, SVGProps } from "react";
+import { ReactElement } from "react";
 
 //<editor-fold desc="Icon Components" defaultstate="collapsed">
 
@@ -285,46 +287,6 @@ export function SunIcon(props: IconProps) {
 
 //</editor-fold>
 
-/** Icon id type */
-export type IconId =
-  | "home"
-  | "work"
-  | "gallery"
-  | "mail"
-  | "minersstudios"
-  | "whomine"
-  | "github"
-  | "telegram"
-  | "youtube"
-  | "twitch"
-  | "tiktok"
-  | "x"
-  | "reddit"
-  | "linkedin"
-  | "medium"
-  | "npm"
-  | "spotify"
-  | "wakatime"
-  | "steam"
-  | "patreon"
-  | "streamlabs"
-  | "donatello"
-  | "discord"
-  | "moon"
-  | "sun";
-
-/**
- * Props for the SVG icon component.
- *
- * @param size Icon size, sets both width and height (default: 24)
- *
- * @see BaseIcon
- * @see Icon
- */
-export type IconProps = SVGProps<SVGSVGElement> & {
-  size?: number;
-};
-
 /**
  * Map of icon names to their respective SVG components.
  * <p>
@@ -402,7 +364,7 @@ export function BaseIcon({
   height,
   children,
   ...props
-}: IconProps) {
+}: IconProps): ReactElement {
   return (
     <svg
       height={height || size}
@@ -428,7 +390,8 @@ export function BaseIcon({
  * @param width  Icon width
  * @param height Icon height
  * @param props  Additional props
- * @constructor ReactElement
+ * @returns Icon component
+ * @constructor
  */
 export function Icon({
   id,

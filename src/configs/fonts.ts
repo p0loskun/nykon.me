@@ -20,7 +20,11 @@ export const fontRighteous = FontRighteous({
   variable: "--font-righteous",
 });
 
-/** Fonts */
+/**
+ * Fonts
+ *
+ * @enum {string}
+ */
 export const fonts = {
   sans: fontSans.style.fontFamily,
   mono: fontMono.style.fontFamily,

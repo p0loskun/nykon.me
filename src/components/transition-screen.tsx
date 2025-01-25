@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import useTransitionScreen from "@hooks/use-transition-screen";
 
 /**
@@ -8,7 +8,7 @@ import useTransitionScreen from "@hooks/use-transition-screen";
  * @constructor
  * @see setContentVisible
  */
-export default function TransitionScreen() {
+export default function TransitionScreen(): ReactElement {
   /*
    * Transition context, used to get the content visibility state.
    * Use `setContentVisible` to change the visibility state.

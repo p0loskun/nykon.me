@@ -1,16 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-/** Social card category type. */
-export type SocialCategoryId = "default" | "work" | "donate";
-
-/** Social category properties type. */
-export type SocialCategoryProps = {
-  title?: string;
-  subtitle?: string;
-};
-
-/** Social categories data type. */
-export type SocialCategories = typeof socialCategories;
+import type { SocialCategoryId, SocialCategoryProps } from "@type/social";
 
 /** Social categories data. */
 export const socialCategories: {

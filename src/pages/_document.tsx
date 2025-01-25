@@ -1,8 +1,9 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import clsx from "clsx";
 import { fontSans } from "@configs/fonts";
+import { ReactElement } from "react";
 
-export default function Document() {
+export default function Document(): ReactElement {
   return (
     <Html lang="en">
       <Head />

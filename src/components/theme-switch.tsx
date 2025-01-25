@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactElement } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@heroui/switch";
 import { useTheme } from "next-themes";
@@ -18,7 +18,7 @@ export default function ThemeSwitch({
 }: {
   className?: string;
   classNames?: SwitchProps["classNames"];
-}) {
+}): ReactElement {
   /* State to store the mounted state of the component */
   const [isMounted, setIsMounted] = useState(false);
   /* Theme context */

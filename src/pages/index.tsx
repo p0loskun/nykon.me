@@ -1,27 +1,25 @@
+import type { SocialCategoryId } from "@type/social";
+
 import React, { ReactElement } from "react";
 import { Link } from "@heroui/link";
 import { Image } from "@heroui/image";
-import styles from "@styles/scroll-animated.module.css";
+import styles from "@styles/module/scroll-animated.module.css";
 import siteConfig from "@configs/site";
 import DefaultLayout from "@layouts/default";
 import socialCards from "@configs/content/social-cards";
-import SocialCard from "@components/content/social-card";
-import {
-  socialCategories,
-  SocialCategoryId,
-} from "@configs/content/social-categories";
-import SocialCategory from "@components/content/social-category";
+import socialCategories from "@configs/content/social-categories";
 import useScrollAnimation from "@hooks/use-scroll-animation";
 import redirect from "@utils/redirect";
+import { SocialCard, SocialCategory } from "@components/content/social";
 
-export default function HomePage() {
+export default function HomePage(): ReactElement {
   useScrollAnimation();
 
   const cardMap = initCards();
 
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-12 py-8 md:py-10">
+      <section className="container mx-auto max-w-7xl flex flex-col items-center justify-center gap-12 py-8 md:py-10">
         <article
           className={`${styles.scrollAnimated} flex flex-col max-w-lg text-center justify-center items-center content-center`}
           id="about"
@@ -77,11 +75,13 @@ function initCards() {
     ReactElement<React.JSXElementConstructor<any>>[]
   >();
 
-  socialCards.forEach((card) => {
-    const category: SocialCategoryId = card.category || "default";
+  socialCards.forEach((properties) => {
+    const category: SocialCategoryId = properties.category || "default";
     const cards = cardMap.get(category) || [];
 
-    cards.push(<SocialCard key={card.link.href} card={card} />);
+    cards.push(
+      <SocialCard key={properties.link.href} properties={properties} />,
+    );
     cardMap.set(category, cards);
   });
 

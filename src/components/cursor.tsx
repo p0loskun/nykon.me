@@ -1,8 +1,8 @@
-import { Component } from "react";
+import { Component, ReactElement } from "react";
 import { withRouter, NextRouter } from "next/router";
 import gsap from "gsap";
 import clsx from "clsx";
-import mobileCheck from "@utils/mobile-check";
+import isOnMobile from "@utils/is-on-mobile";
 
 /**
  * Cursor properties.
@@ -28,6 +28,8 @@ interface CursorState {
  * hovering over elements.</p>
  * <p>It also hides the cursor when the mouse leaves the window.</p>
  * <p>The cursor is not displayed on mobile devices.</p>
+ *
+ * @extends {Component<CursorProps, CursorState>}
  */
 class Cursor extends Component<CursorProps, CursorState> {
   private cursorRef: HTMLElement | null = null;
@@ -36,6 +38,12 @@ class Cursor extends Component<CursorProps, CursorState> {
   private detachHoverEvents: (() => void) | null = null;
   private detachObserver: (() => void) | null = null;
 
+  /**
+   * Cursor component constructor.
+   *
+   * @param props Cursor properties.
+   * @constructor
+   */
   constructor(props: CursorProps) {
     super(props);
 
@@ -52,7 +60,7 @@ class Cursor extends Component<CursorProps, CursorState> {
    * @see attachHoverListeners
    */
   componentDidMount() {
-    if (mobileCheck(navigator.userAgent)) {
+    if (isOnMobile(navigator.userAgent)) {
       return;
     }
 
@@ -113,7 +121,7 @@ class Cursor extends Component<CursorProps, CursorState> {
    *
    * @see attachHoverListeners
    */
-  observeDOMChanges = () => {
+  observeDOMChanges = (): (() => void) => {
     const observer = new MutationObserver(() => {
       this.attachHoverListeners();
     });
@@ -183,7 +191,7 @@ class Cursor extends Component<CursorProps, CursorState> {
    * @param targets List of elements to attach the hover events.
    * @returns A function to detach the hover events.
    */
-  attachHoverEvents = (targets: NodeListOf<Element>) => {
+  attachHoverEvents = (targets: NodeListOf<Element>): (() => void) => {
     const onMouseEnter = () => this.scaleCursor(3);
     const onMouseLeave = () => this.scaleCursor(1);
 
@@ -203,7 +211,7 @@ class Cursor extends Component<CursorProps, CursorState> {
   /**
    * Render the cursor component.
    */
-  render() {
+  render(): ReactElement {
     return (
       <div
         className={clsx(

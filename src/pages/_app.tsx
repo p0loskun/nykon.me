@@ -7,8 +7,9 @@ import { TransitionProvider } from "@contexts/transition-screen";
 import Cursor from "@components/cursor";
 import "@styles/globals.css";
 import "@configs/fonts";
+import { ReactElement } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps): ReactElement {
   return (
     <HeroUIProvider navigate={useRouter().push}>
       <ThemeProvider defaultTheme="dark">

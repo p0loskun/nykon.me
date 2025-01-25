@@ -1,21 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { AnchorHTMLAttributes } from "react";
-import { IconId } from "@components/icon";
-
-/** Navigation item properties type. */
-export type NavItemProps = {
-  label: string;
-  link: AnchorHTMLAttributes<HTMLAnchorElement>;
-  icon: IconId;
-};
-
-/** Site configuration type. */
-export type SiteConfig = {
-  name: string;
-  description: string;
-  navItems: NavItemProps[];
-};
+import type { SiteConfig } from "@type/site";
 
 /** Site configuration data. */
 export const siteConfig: SiteConfig = {

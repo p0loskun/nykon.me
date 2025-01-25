@@ -1,16 +1,18 @@
+import type { RedirectProps } from "@type/redirect";
+
 import { GetStaticProps, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { ReactElement, useEffect } from "react";
 import Error from "next/error";
 import RedirectLayout from "@layouts/redirect";
 import RedirectHead from "@layouts/redirect-head";
-import { redirects, RedirectProps } from "@configs/redirects";
+import redirects from "@configs/redirects";
 
 export default function RedirectPage({
   redirect,
 }: {
   redirect: RedirectProps | null;
-}) {
+}): ReactElement {
   const router = useRouter();
 
   useEffect(() => {

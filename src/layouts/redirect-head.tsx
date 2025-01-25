@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unknown-property */
 
-import React from "react";
+import type { RedirectProps } from "@type/redirect";
+
+import React, { ReactElement } from "react";
 import Head from "next/head";
-import { RedirectProps } from "@configs/redirects";
 
 /**
  * Default head component for redirect pages that injects elements to `<head>`
@@ -14,7 +15,7 @@ export default function RedirectHead({
   redirect,
 }: {
   redirect: RedirectProps;
-}) {
+}): ReactElement {
   return (
     <Head>
       <title>{redirect.title}</title>

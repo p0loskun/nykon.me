@@ -7,7 +7,7 @@ import { redirects } from "@configs/redirects";
  * @returns The final URL (href) associated with the key.
  * @throws {Error} If the key does not exist in the map.
  */
-export default function redirect(key: keyof typeof redirects): string {
+export default function redirect(key: string): string {
   const redirect = redirects[key];
 
   if (!redirect) {

@@ -1,13 +1,12 @@
 // noinspection JSUnusedGlobalSymbols
 
-/** Redirect properties type. */
-export type RedirectProps = {
-  href: string;
-  title: string;
-  description: string;
-};
+import type { RedirectProps } from "@type/redirect";
 
-/** Redirect data. */
+/**
+ * Redirect data.
+ *
+ * @enum {RedirectProps}
+ */
 export const redirects: Record<string, RedirectProps> = {
   email: {
     href: "mailto:contact@nykon.me",

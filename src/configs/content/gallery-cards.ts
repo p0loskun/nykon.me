@@ -1,13 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import { ImageProps } from "next/image";
-
-/** Gallery card properties type. */
-export type GalleryCardProps = {
-  image: ImageProps;
-  title?: string;
-  subtitle?: string;
-};
+import type { GalleryCardProps } from "@type/gallery";
 
 /** Gallery cards data. */
 export const galleryCards: GalleryCardProps[] = [

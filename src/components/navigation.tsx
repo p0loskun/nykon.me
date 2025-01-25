@@ -1,3 +1,5 @@
+import type { IconId } from "@type/icon";
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -5,10 +7,10 @@ import {
 } from "@heroui/navbar";
 import { siteConfig } from "@configs/site";
 import ThemeSwitch from "@components/theme-switch";
-import styles from "@styles/navbar.module.css";
+import styles from "@styles/module/navbar.module.css";
 import { Button, ButtonProps } from "@heroui/button";
-import { Icon, IconId } from "@components/icon";
-import { useEffect, useState } from "react";
+import { Icon } from "@components/icon";
+import React, { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useTransitionScreen from "@hooks/use-transition-screen";
 
@@ -20,7 +22,7 @@ import useTransitionScreen from "@hooks/use-transition-screen";
  *                 Otherwise, the icons and labels will be displayed.
  * @constructor
  */
-export function Navbar({ iconOnly }: { iconOnly?: boolean }) {
+export function Navbar({ iconOnly }: { iconOnly?: boolean }): ReactElement {
   return (
     <HeroUINavbar
       className={`${styles.navbar} backdrop-blur-none bg-background-none`}
@@ -58,7 +60,6 @@ export function Navbar({ iconOnly }: { iconOnly?: boolean }) {
  * @param iconOnly        If true, only the icon of the button will be displayed.
  * @param buttonClassName Button class name.
  * @param textClassName   Text class name.
- * @param disabled
  * @param props           Additional button props.
  * @constructor
  */
@@ -77,7 +78,7 @@ export function NavButton({
   iconOnly?: boolean;
   buttonClassName?: string;
   textClassName?: string;
-} & ButtonProps) {
+} & ButtonProps): ReactElement {
   /* State to store the active state of the button */
   const [isActive, setActive] = useState(false);
   /* Router instance */

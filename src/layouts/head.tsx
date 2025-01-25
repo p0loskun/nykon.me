@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import NextHead from "next/head";
 import { siteConfig } from "@configs/site";
 
@@ -7,7 +7,7 @@ import { siteConfig } from "@configs/site";
  *
  * @constructor
  */
-export default function Head() {
+export default function Head(): ReactElement {
   return (
     <NextHead>
       <title>{siteConfig.name}</title>

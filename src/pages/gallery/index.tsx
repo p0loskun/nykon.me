@@ -1,17 +1,30 @@
-import { title } from "@components/primitives";
 import DefaultLayout from "@layouts/default";
 import useScrollAnimation from "@hooks/use-scroll-animation";
+import React, { ReactElement } from "react";
+import galleryCards from "@configs/content/gallery-cards";
+import { Gallery, GalleryCard } from "@components/content/gallery";
+import { GalleryCardProps } from "@type/gallery";
 
-export default function GalleryPage() {
+export default function GalleryPage(): ReactElement {
   useScrollAnimation();
+
+  const cards = initCards();
 
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-        <div className="inline-block max-w-lg text-center justify-center">
-          <h1 className={title()}>Gallery</h1>
-        </div>
+        <Gallery>{cards}</Gallery>
       </section>
     </DefaultLayout>
   );
+}
+
+function initCards() {
+  const cards: ReactElement[] = [];
+
+  galleryCards.forEach((properties: GalleryCardProps) => {
+    cards.push(<GalleryCard properties={properties} />);
+  });
+
+  return cards;
 }

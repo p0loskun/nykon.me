@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import { Navbar } from "@components/navigation";
 import Head from "@layouts/head";
 import TransitionScreen from "@components/transition-screen";
@@ -15,7 +15,7 @@ export default function DefaultLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): ReactElement {
   /* State to track if the view is mobile */
   const [isMobileView, setIsMobileView] = useState(false);
 
@@ -34,9 +34,7 @@ export default function DefaultLayout({
       <Head />
       <TransitionScreen />
       <Navbar iconOnly={isMobileView} />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow md:pt-16 max-md:pb-20">
-        {children}
-      </main>
+      <main className="px-6 md:pt-16 max-md:pb-20">{children}</main>
     </TransitionProvider>
   );
 }

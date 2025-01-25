@@ -1,10 +1,11 @@
-import React, { createContext, useState } from "react";
+import type { TransitionContextState } from "@type/transition-context";
+
+import React, { createContext, ReactElement, useState } from "react";
 
 /** Context to manage the visibility of the transition screen overlay. */
-export const TransitionContext = createContext<{
-  isContentVisible: boolean;
-  setContentVisible: (visible: boolean) => void;
-} | null>(null);
+export const TransitionContext = createContext<TransitionContextState | null>(
+  null,
+);
 
 /**
  * Provider for the transition screen context that manages the visibility of the
@@ -17,7 +18,7 @@ export function TransitionProvider({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}): ReactElement {
   /* State to track the visibility of the content */
   const [isContentVisible, setContentVisible] = useState(true);
 

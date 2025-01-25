@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import styles from "@styles/scroll-animated.module.css";
+import styles from "@styles/module/scroll-animated.module.css";
 
 /**
  * Function to animate the elements when they appear.
@@ -33,7 +33,7 @@ const disappearFunction = (entries: IntersectionObserverEntry[]) => {
  * Search for elements with the `scrollAnimated` class and animate them when
  * they are in the viewport, and reverse the animation when they leave.
  */
-export default function useScrollAnimation() {
+export default function useScrollAnimation(): void {
   useEffect(() => {
     /* Get all elements with the `scrollAnimated` class */
     const elements = document.querySelectorAll(`.${styles.scrollAnimated}`);
